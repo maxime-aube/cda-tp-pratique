@@ -3,6 +3,8 @@ package practice.mediatheque;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 public class Media {
 
     protected String title;
@@ -21,6 +23,8 @@ public class Media {
     public void voter(int note) {
         if (note >= 0 && note <= 5) {
             this.notes.add(note);
+        } else {
+            System.out.println("La note doit être comprise entre 0 et 5");
         }
     }
 
@@ -30,7 +34,7 @@ public class Media {
             for (int note : this.notes) {
                 sum += note;
             }
-            return sum / this.
+            return round((sum / (float) this.notes.size()) * 100) / 100.0f;
         }
         return 0;
     }

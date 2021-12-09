@@ -12,6 +12,10 @@ public class Mediatheque {
         this.collection.add(m);
     }
 
+    public Media getMedia(int i) {
+        return this.collection.get(i);
+    }
+
     public ArrayList<Media> filter(String critere, String valeur) {
 
         ArrayList<Media> matchList = new ArrayList<Media>();
